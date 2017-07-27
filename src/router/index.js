@@ -1,15 +1,26 @@
-import Vue from 'vue'
-import Router from 'vue-router'
-import Hello from '@/components/Hello'
+import Vue from 'vue';
+import Router from 'vue-router';
 
-Vue.use(Router)
+import Question from '@/components/question/Question';
+import Answer from '@/components/answer/Answer';
+
+Vue.use(Router);
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'Hello',
-      component: Hello
+      redirect: '/question/1'   // 默认跳转到第一题
+    },
+    {
+      path: '/question/:id',
+      name: 'Question',
+      component: Question
+    },
+    {
+      path: '/answer',
+      name: 'Answer',
+      component: Answer
     }
   ]
-})
+});
