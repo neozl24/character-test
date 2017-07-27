@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import Router from 'vue-router';
 
-import Question from '@/components/question/Question';
-import Answer from '@/components/answer/Answer';
+import Question from '@/components/question/Question.vue';
+import Answer from '@/components/answer/Answer.vue';
 
 Vue.use(Router);
 
