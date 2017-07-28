@@ -7,18 +7,19 @@
     <div class="question">{{question}}</div>
     <table class="option-wrapper">
       <tr>
-        <td class="option" @click="chooseFirst">{{option1}}</td>
+        <td class="option" :class="{'current': currentOption === 1}" @click="chooseOption(1)">{{option1}}</td>
       </tr>
       <tr>
-        <td class="option" @click="chooseSecond">{{option2}}</td>
+        <td class="option" :class="{'current': currentOption === 2}" @click="chooseOption(2)">{{option2}}</td>
       </tr>
     </table>
-    <button class="submit" v-show="displayResultButton">查看结果</button>
+    <button class="submit" v-show="displayResultButton" @click="showResult">查看结果</button>
   </div>
 </template>
 
 <script>
-import questions from './questions.js';
+import { mapState } from 'vuex';
+import questions from '@/assets/data/questions.js';
 
 export default {
   computed: {
@@ -41,14 +42,21 @@ export default {
       return this.id > 1;
     },
     displayNext() {
-      return this.id < this.totalNum;
+      return this.id < this.totalNum && this.currentOption > 0;
     },
     displayResultButton() {
-      return this.id === this.totalNum;
-    }
+      return this.$store.getters.answeredAll;
+    },
+    ...mapState({
+      currentOption(state) {
+        return state.answerList[this.id - 1].value;
+      }
+    })
   },
   mounted() {
-    // console.log(this.totalNum);
+    // 刷新页面，或者从结果页跳转过来时，会清空所有答案，然后返回到第一题
+    this.$store.commit('clearAnswers');
+    this.$router.push({name: 'Question', params: {id: 1}});
   },
   methods: {
     back() {
@@ -61,15 +69,17 @@ export default {
         this.$router.push({name: 'Question', params: {id: this.id + 1}});
       }
     },
-    chooseFirst() {
+    chooseOption(index) {
+      this.$store.commit('chooseOption', {
+        id: this.id,
+        option: index
+      });
       setTimeout(() => {
         this.next();
-      }, 200);
+      }, 100);
     },
-    chooseSecond() {
-      setTimeout(() => {
-        this.next();
-      }, 200);
+    showResult() {
+      this.$router.push({name: 'Answer'});
     }
   }
 };
@@ -120,6 +130,9 @@ export default {
         color: #4e647f;
         &:hover {
           background-color: #e3e3e6;
+        }
+        &.current {
+          background-color: #c3c3c8;
         }
       }
     }

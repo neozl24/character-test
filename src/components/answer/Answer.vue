@@ -5,11 +5,12 @@
 </template>
 
 <script>
-import answers from './answers.js';
+import answers from '@/assets/data/answers.js';
 
 export default {
   mounted() {
     console.log(answers);
+    console.log(this.$store.state.answerList);
   }
 };
 </script>
