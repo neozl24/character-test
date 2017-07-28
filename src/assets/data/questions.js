@@ -8,8 +8,8 @@ export default [
   {
     type: 'EI',
     question: '当你参加一个聚会时，你会',
-    option1: '主要听取别人的建议',
-    option2: '依靠自己的力量'
+    option1: '待在最后才走',
+    option2: '早早就想回家'
   },
   {
     type: 'EI',
