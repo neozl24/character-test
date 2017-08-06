@@ -92,18 +92,23 @@ export default {
   max-width: 600px;
   height: 100%;
   user-select: none;
+  background: url("~static/img/question-back.jpg") no-repeat fixed center;
+  background-size: cover;
+  overflow: hidden;
   .control-bar {
     margin: 30px auto 30px;
     height: 30px;
     padding: 0 20px;
     .button {
       line-height: 30px;
-      color: #666;
+      color: #fff;
       cursor: pointer;
       &.back-button {
+        padding-left: 20px;
         float: left;
       }
       &.next-button {
+        padding-right: 20px;
         float: right;
       }
     }
@@ -113,7 +118,7 @@ export default {
     width: 70%;
     font-size: 18px;
     cursor: default;
-    color: #111;
+    color: #fdfdfe;
   }
   .option-wrapper {
     margin: 50px auto;
@@ -127,20 +132,20 @@ export default {
         text-align: center;
         vertical-align: middle;
         cursor: pointer;
-        color: #4e647f;
+        color: #fdfdfe;
         &:hover {
-          background-color: #e3e3e6;
+          background-color: rgba(92, 110, 146, 0.95);
         }
         &.current {
-          background-color: #c3c3c8;
+          background-color: rgba(82, 100, 136, 0.8);
         }
       }
     }
   }
   .submit {
     margin: 20px auto;
-    width: 120px;
-    height: 40px;
+    width: 160px;
+    height: 60px;
     border-radius: 30px;
     border: none;
     outline: none;

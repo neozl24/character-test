@@ -1,7 +1,7 @@
 <template lang="html">
-  <div class="answer-wrapper" v-show="displayResult">
-    <h3 class="title">{{name}}</h3>
-    <p class="description">{{description}}</p>
+  <div class="answer-wrapper">
+    <h3 class="title" v-show="displayResult">{{name}}</h3>
+    <pre class="description" v-show="displayResult">{{description}}</pre>
     <div class="restart" @click="restart">重新开始</div>
   </div>
 </template>
@@ -65,7 +65,7 @@ export default {
     },
     restart() {
       this.$store.commit('clearAnswers');
-      this.$router.push({name: 'Question', params: {id: 1}});
+      this.$router.push({name: 'Cover'});
     }
   },
   mounted() {
@@ -78,24 +78,39 @@ export default {
 
 <style lang="less">
 .answer-wrapper {
-  margin: 80px auto;
-  width: 80%;
-  max-width: 500px;
+  margin: 0 auto;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  max-width: 600px;
+  background: url("~static/img/result-back.jpg") no-repeat fixed center;
+  overflow: scroll;
   .title {
-    margin: 50px auto;
+    margin: 100px auto 50px;
     font-size: 20px;
+    color: #fff;
   }
   .description {
     margin: 50px auto;
+    width: 80%;
     line-height: 25px;
     font-size: 14px;
     text-align: justify;
+    white-space: pre-wrap;
+    color: #fdfdfd;
   }
   .restart {
-    margin: 50px auto;
+    margin: 80px auto;
     font-size: 16px;
     user-select: none;
     cursor: pointer;
+    color: #fafafb;
+    &:hover {
+      color: #cacacb;
+    }
+    &:active {
+      color: #dadadb;
+    }
   }
 }
 </style>
