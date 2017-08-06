@@ -83,7 +83,7 @@ export default {
   width: 100%;
   height: 100%;
   max-width: 600px;
-  background: url("~static/img/result-back.jpg") no-repeat fixed center;
+  background: url("/static/img/result-back.jpg") no-repeat fixed center;
   overflow: scroll;
   .title {
     margin: 100px auto 50px;

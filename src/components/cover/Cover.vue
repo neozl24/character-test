@@ -1,6 +1,6 @@
 <template lang="html">
   <div class="cover" ref="cover" :class="coverRatio">
-    <img src="~static/img/enter-btn.png" class="enter-btn" :class="dependsOn" @click="startQuestion"></img>
+    <img src="static/img/enter-btn.png" class="enter-btn" :class="dependsOn" @click="startQuestion"></img>
   </div>
 </template>
 
@@ -46,7 +46,7 @@ export default {
 .cover {
   width: 100%;
   height: 100%;
-  background: url("~static/img/cover.jpg") no-repeat fixed center;
+  background: url("/static/img/cover.jpg") no-repeat fixed center;
   &.horizontal-first {
     background-size: 100% auto;
   }

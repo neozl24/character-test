@@ -92,7 +92,7 @@ export default {
   max-width: 600px;
   height: 100%;
   user-select: none;
-  background: url("~static/img/question-back.jpg") no-repeat fixed center;
+  background: url("/static/img/question-back.jpg") no-repeat fixed center;
   background-size: cover;
   overflow: hidden;
   .control-bar {
