@@ -132,11 +132,13 @@ export default {
         text-align: center;
         vertical-align: middle;
         cursor: pointer;
+        background-color: rgba(42, 50, 86, 0.7);
         color: #fdfdfe;
         &:hover {
           background-color: rgba(92, 110, 146, 0.95);
         }
         &.current {
+          border: 2px solid #fff;
           background-color: rgba(82, 100, 136, 0.8);
         }
       }
