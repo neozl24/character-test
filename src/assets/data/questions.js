@@ -57,7 +57,7 @@ export default [
     type: 'NS',
     question: '与人交往时，你倾向相信',
     option1: '永远有进步的空间',
-    option2: '若它没有被破坏，就顺其自然'
+    option2: '顺其自然'
   },
   {
     type: 'NS',
@@ -80,7 +80,7 @@ export default [
   {
     type: 'NS',
     question: '你通常',
-    option1: '偏向于去想象未来可能要的事情',
+    option1: '偏向于去想象未来可能要发生的事情',
     option2: '偏向于去想象即将来临的事情'
   },
   {
@@ -98,7 +98,7 @@ export default [
   {
     type: 'FT',
     question: '当和某人分手时',
-    option1: '通常你的情绪深陷其中，很难抽身出来',
+    option1: '通常你深陷其中，很难抽身出来',
     option2: '虽然你觉得很受伤，但一旦下定决心，你就会直截了当地把对方的影子甩开'
   },
   {
@@ -153,12 +153,12 @@ export default [
     type: 'JP',
     question: '下面哪种情况较常见',
     option1: '你准时出席而其他人迟到',
-    option2: '其他人迟到而你准时出席'
+    option2: '出席活动时你总是迟到'
   },
   {
     type: 'JP',
     question: '你倾向于哪种做事方式',
-    option1: '下定决定并且做出最后肯定的结论',
+    option1: '下定决心并且做出最后肯定的结论',
     option2: '放宽你的选择面并且持续收集信息'
   },
   {
